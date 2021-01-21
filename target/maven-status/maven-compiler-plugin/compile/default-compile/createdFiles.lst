@@ -1,0 +1,10 @@
+onlineShop/log/ServerLogger.class
+onlineShop/log/Logger.class
+onlineShop/ApplicationConfig.class
+onlineShop/model/Authorities.class
+onlineShop/model/BillingAddress.class
+onlineShop/model/Cart.class
+onlineShop/log/PaymentAction.class
+onlineShop/Application.class
+onlineShop/model/Customer.class
+onlineShop/model/CartItem.class

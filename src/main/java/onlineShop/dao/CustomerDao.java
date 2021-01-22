@@ -24,7 +24,7 @@ public class CustomerDao {
 
         Authorities authorities = new Authorities();
         authorities.setAuthorities("ROLE_USER");
-        authorities.setEmailId(customer.getUser().getEamilId());
+        authorities.setEmailId(customer.getUser().getEmailId());
 
         Cart cart = new Cart();
         cart.setCustomer(customer);
@@ -43,7 +43,7 @@ public class CustomerDao {
             session.getTransaction().rollback();
         } finally {
             if (session != null) {
-                session.getTransaction().rollback();
+                session.close();
             }
         }
     }
@@ -61,7 +61,6 @@ public class CustomerDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         if (user != null) {
             return user.getCustomer();
         }

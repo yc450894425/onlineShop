@@ -12,7 +12,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String eamilId;
+    private String emailId;
     private String password;
     private boolean enabled;
     @OneToOne(mappedBy = "user")
@@ -22,16 +22,12 @@ public class User implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public String getEamilId() {
-        return eamilId;
-    }
-
-    public void setEamilId(String eamilId) {
-        this.eamilId = eamilId;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
     public String getPassword() {

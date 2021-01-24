@@ -39,7 +39,7 @@ public class ProductController {
 
     @RequestMapping(value = "/admin/product/addProduct", method = RequestMethod.GET)
     public ModelAndView getProductForm() {
-        return new ModelAndView("addProduct", "productFormm", new Product());
+        return new ModelAndView("addProduct", "productForm", new Product());
     }
 
     @RequestMapping(value = "/admin/product/addProduct", method = RequestMethod.POST)
@@ -51,7 +51,7 @@ public class ProductController {
         MultipartFile image = product.getProductImage();
         if (image != null && !image.isEmpty()) {
 
-            Path path = Paths.get("/users/zhangyuchao/products/onlineShopping/onlineShopping/source/main/webapp/WEB-INF/resource/images/products/" + product.getId() + ".jpg");
+            Path path = Paths.get("/users/zhangyuchao/projects/onlineShopping/onlineShopping/source/main/webapp/WEB-INF/resource/images/products/" + product.getId() + ".jpg");
 
             try {
                 image.transferTo(new File(path.toString()));
@@ -64,7 +64,7 @@ public class ProductController {
 
     @RequestMapping(value = "admin/delete/{productId}")
     public String deleteProduct(@PathVariable(value = "productId") int productId) {
-        Path path = Paths.get("/users/zhangyuchao/products/onlineShopping/onlineShopping/source/main/webapp/WEB-INF/resource/images/products/" + productId + ".jpg");
+        Path path = Paths.get("/users/zhangyuchao/projects/onlineShopping/onlineShopping/source/main/webapp/WEB-INF/resource/images/products/" + productId + ".jpg");
         if (Files.exists(path)) {
             try {
                 Files.delete(path);

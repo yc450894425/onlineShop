@@ -31,7 +31,7 @@ public class ApplicationConfig {
     @Bean(name = "dataSource")
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:8889/ecommerce?serverTimezone=UTC");
         dataSource.setUsername("zyc");
         dataSource.setPassword("12345678");

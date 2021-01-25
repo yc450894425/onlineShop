@@ -16,7 +16,7 @@ public class CartItem implements Serializable {
     private int id;
     private int quantity;
     private double price;
-    @OneToOne
+    @ManyToOne
     private Product product;
     @ManyToOne
     @JsonIgnore
